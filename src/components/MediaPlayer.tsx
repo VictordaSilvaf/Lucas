@@ -34,7 +34,7 @@ const MediaPlayer: React.FC<MediaPlayerProps> = ({ my_sound, my_video }) => {
         Seu navegador não suporta o elemento de áudio.
       </audio> */}
 
-      <video autoPlay muted className="max-w-3xl w-full aspect-auto object-contain object-center" controls>
+      <video autoPlay loop muted className="max-w-3xl max-h-[600px] w-full aspect-auto object-contain object-center" controls>
         <source src={my_video} type="video/mp4" />
         Seu navegador não suporta a tag de vídeo.
       </video>
