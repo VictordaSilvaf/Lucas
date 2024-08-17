@@ -50,10 +50,10 @@ const MediaPlayer: React.FC<MediaPlayerProps> = ({ my_sound, my_video }) => {
 
   return (
     <div className="container mx-auto flex items-center justify-center flex-col">
-      <audio ref={audioRef} autoPlay loop>
+      {/* <audio ref={audioRef} autoPlay loop>
         <source src={my_sound} type="audio/mpeg" />
         Seu navegador não suporta o elemento de áudio.
-      </audio>
+      </audio> */}
 
       <video
         ref={videoRef}
@@ -71,19 +71,103 @@ const MediaPlayer: React.FC<MediaPlayerProps> = ({ my_sound, my_video }) => {
       <div className="mt-6 text-3xl flex flex-col gap-y-10 text-white max-w-3xl text-center">
         <TimeSince targetDate={somePastDate} />
 
-        {/* Lógica para exibir os textos com base no valor de step */}
         {step === 0 && (
-          <div>
+          <div className="">
             <h1 className="text-red-500">Você...</h1>
-            <p className="mt-4">
-              11111111 Dolorum hic veniam minima hic veniam minima hic veniam
-              minima hic veniam minima hic veniam minima debitis rem nihil!
-              Deleniti, quibusdam. Corrupti, reiciendis.
-            </p>
+
+            <div className="w-full flex flex-col">
+              <p className="mt-4">
+                11111111 Dolorum hic veniam minima hic veniam minima hic veniam
+                minima hic veniam minima hic veniam minima debitis rem nihil!
+                Deleniti, quibusdam. Corrupti, reiciendis.
+              </p>
+            </div>
           </div>
         )}
 
-        {/* ... Outras condições para step ... */}
+        {step === 1 && (
+          <div className="">
+            <h1 className="text-red-500">é...</h1>
+
+            <div className="w-full flex flex-col">
+              <p className="mt-4">
+                222222222 Dolorum hic veniam minima hic veniam minima hic veniam
+                minima hic veniam minima hic veniam minima debitis rem nihil!
+                Deleniti, quibusdam. Corrupti, reiciendis.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {step === 2 && (
+          <div className="">
+            <h1 className="text-red-500">a...</h1>
+
+            <div className="w-full flex flex-col">
+              <p className="mt-4">
+                33333333 Dolorum hic veniam minima hic veniam minima hic veniam
+                minima hic veniam minima hic veniam minima debitis rem nihil!
+                Deleniti, quibusdam. Corrupti, reiciendis.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {step === 3 && (
+          <div className="">
+            <h1 className="text-red-500">mulher...</h1>
+
+            <div className="w-full flex flex-col">
+              <p className="mt-4">
+                444444444 Dolorum hic veniam minima hic veniam minima hic veniam
+                minima hic veniam minima hic veniam minima debitis rem nihil!
+                Deleniti, quibusdam. Corrupti, reiciendis.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {step === 4 && (
+          <div className="">
+            <h1 className="text-red-500">da...</h1>
+
+            <div className="w-full flex flex-col">
+              <p className="mt-4">
+                555555555 Dolorum hic veniam minima hic veniam minima hic veniam
+                minima hic veniam minima hic veniam minima debitis rem nihil!
+                Deleniti, quibusdam. Corrupti, reiciendis.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {step === 5 && (
+          <div className="">
+            <h1 className="text-red-500">minha...</h1>
+
+            <div className="w-full flex flex-col">
+              <p className="mt-4">
+                666666666 Dolorum hic veniam minima hic veniam minima hic veniam
+                minima hic veniam minima hic veniam minima debitis rem nihil!
+                Deleniti, quibusdam. Corrupti, reiciendis.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {step === 6 && (
+          <div className="">
+            <h1 className="text-red-500">vida!</h1>
+
+            <div className="w-full flex flex-col">
+              <p className="mt-4">
+                7777777777 Dolorum hic veniam minima hic veniam minima hic
+                veniam minima hic veniam minima hic veniam minima debitis rem
+                nihil! Deleniti, quibusdam. Corrupti, reiciendis.
+              </p>
+            </div>
+          </div>
+        )}
 
         {step < 6 && (
           <button
