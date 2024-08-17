@@ -23,6 +23,22 @@ const MediaPlayer: React.FC<MediaPlayerProps> = ({ my_sound, my_video }) => {
     playAudio();
   }, [my_sound]);
 
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const handleFullscreenChange = (e) => {
+      if (document.fullscreenElement === videoRef.current) {
+        document.exitFullscreen(); // Sai do fullscreen automaticamente
+      }
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    };
+  }, []);
+
   const [step, setStep] = useState(0);
 
   const somePastDate = new Date("2023-02-01T12:00:00");
@@ -34,7 +50,14 @@ const MediaPlayer: React.FC<MediaPlayerProps> = ({ my_sound, my_video }) => {
         Seu navegador não suporta o elemento de áudio.
       </audio> */}
 
-      <video autoPlay loop muted className="max-w-3xl max-h-[600px] w-full aspect-auto object-contain object-center" controls>
+      <video
+        ref={videoRef}
+        autoPlay
+        loop
+        muted
+        className="max-w-3xl max-h-[600px] w-full aspect-auto object-contain object-center"
+        controls
+      >
         <source src={my_video} type="video/mp4" />
         Seu navegador não suporta a tag de vídeo.
       </video>
